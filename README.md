@@ -1,0 +1,2 @@
+# pyndlsearch
+国立国会図書館サーチAPIのpythonラッパー
