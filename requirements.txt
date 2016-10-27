@@ -1,0 +1,7 @@
+defusedxml==0.4.1
+gyp==0.1
+Magic-file-extensions==0.2
+pygobject==3.20.0
+pyliblzma==0.5.3
+SOAPpy==0.12.22
+wstools==0.4.3
