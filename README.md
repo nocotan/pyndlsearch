@@ -7,6 +7,12 @@
 - Python 3.5.2
 - requests 2.10.0
 
+### Instration
+
+```
+pip install pyndlsearch
+```
+
 ### SRU(Search/Retrieve Via URL)
 http://iss.ndl.go.jp/api/sru
 - version: 1.2
