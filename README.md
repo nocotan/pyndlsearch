@@ -20,7 +20,7 @@ http://iss.ndl.go.jp/api/sru
 
 #### Usage
 
-```sample.py
+```python:sample
 # -*- coding: utf-8 -*-
 
 from pyndlsearch.client import SRUClient
