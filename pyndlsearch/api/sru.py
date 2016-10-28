@@ -5,9 +5,43 @@ import requests
 from .abs_api import AbstractAPI
 
 
-class SRUResponse(object):
+class RecordData(object):
+    title = ''
+    creator = ''
+    descriptions = {}
+    publisher = ''
+    language = ''
+
     def __init__(self):
         pass
+
+class Record(object):
+    recordSchema = ''
+    recordPacking = ''
+    recordData = None
+    recordPosition = 0
+
+    def __init__(self):
+        pass
+
+
+class extraResponseData(object):
+    facets = {}
+
+    def __init__(self):
+        pass
+
+
+class searchRetrieveResponse(object):
+    version = ''
+    numberOfRecords = 0
+    nextRecordPosition = ''
+    extraResponseData = None
+
+    def __init__(self):
+        self.version = '1.2'
+        self.extraResponseData = extraResponseData()
+
 
 class SRUApi(AbstractAPI):
     URL = 'http://iss.ndl.go.jp/api/sru'

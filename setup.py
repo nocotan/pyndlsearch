@@ -35,7 +35,5 @@ setup(
     author = 'nocotan',
     author_email = 'noconoco.lib@gmail.com',
     url = 'http://github.com/nocotan/pyndlsearch/',
-    dependency_links = [],
     packages = packages,
-    include_package_data = True,
 )

@@ -7,6 +7,7 @@ from pyndlsearch.cql import CQL
 if __name__ == '__main__':
     cql = CQL()
     cql.title = 'Python'
+    cql.fromdate = '2000-10-10'
     print(cql.payload())
 
     client = SRUClient(cql)
