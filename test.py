@@ -7,10 +7,10 @@ from pyndlsearch.cql import CQL
 if __name__ == '__main__':
     cql = CQL()
     cql.title = 'Python'
-    print(cql)
+    print(cql.payload())
 
     client = NDLSearchClient(cql)
     print(client)
-    res = client.get()
+    res = client.get_response()
 
     print(res.text)
