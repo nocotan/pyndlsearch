@@ -17,3 +17,23 @@ http://iss.ndl.go.jp/api/sru
 - recordSchema: default "dc"
 - inprocess: default "false"
 - onlyBib: default "false"
+
+#### Usage
+
+```sample.py
+# -*- coding: utf-8 -*-
+
+from pyndlsearch.client import SRUClient
+from pyndlsearch.cql import CQL
+
+
+if __name__ == '__main__':
+    cql = CQL()
+    cql.title = 'Python'
+
+    client = SRUClient(cql)
+    client.set_maximum_records(2)
+    res = client.get_response()
+
+    print(res.text)
+```
