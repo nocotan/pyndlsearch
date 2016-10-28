@@ -38,10 +38,28 @@ class SRUApi(AbstractAPI):
         self.onlyBib = 'false'
 
     def make_query(self):
-        self.query = "operation={}&query={}".format(
+        self.query = 'operation={}&query={}'.format(
             self.operation,
             self.query,
         )
+
+        if self.startRecord != '1':
+            self.query += '&startRecord={}'.format(self.startRecord)
+
+        if self.maximumRecords != '200':
+            self.query += '&maximumRecords={}'.format(self.maximumRecords)
+
+        if self.recordPacking != 'string':
+            self.query += '&recordPacking={}'.format(self.recordPacking)
+
+        if self.recordSchema != 'dc':
+            self.query += '&recordSchema={}'.format(self.recordSchema)
+
+        if self.inprocess != 'false':
+            self.query += '&inprocess={}'.format(self.inprocess)
+
+        if self.onlyBib != 'false':
+            self.query += '&onlyBib={}'.format(self.onlyBib)
 
     def get(self):
         self.make_query()

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from pyndlsearch.client import NDLSearchClient
+from pyndlsearch.client import SRUClient
 from pyndlsearch.cql import CQL
 
 
@@ -9,7 +9,8 @@ if __name__ == '__main__':
     cql.title = 'Python'
     print(cql.payload())
 
-    client = NDLSearchClient(cql)
+    client = SRUClient(cql)
+    client.set_maximum_records(2)
     print(client)
     res = client.get_response()
 
