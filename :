@@ -1,8 +1,0 @@
-# -*- coding: utf-8 -*-
-
-from pyndlsearch.client import NDLSearchClient
-from pyndlsearch.cql import CQL
-
-
-if __name__ == '__main__':
-    cql = CQL()
