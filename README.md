@@ -1,7 +1,7 @@
 # pyndlsearch
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)　　
 
-[国立国会会図書館サーチ](http://iss.ndl.go.jp/information/api/)のPythonラッパー  
+[国立国会図書館サーチ](http://iss.ndl.go.jp/information/api/)のPythonラッパー  
 
 ### Requirements
 - Python 3.5.2
