@@ -28,7 +28,7 @@ for dirpath, dirnames, filenames in os.walk(package_dir):
 
 setup(
     name = 'pyndlsearch',
-    version = '0.1',
+    version = '1.0',
     description = 'A Python Wrapper for NDL Search API.',
     keywords = 'api, ndl, search, wrapper',
     license = 'MIT License',

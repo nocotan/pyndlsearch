@@ -26,6 +26,9 @@ class SRUClient(AbstractClient):
     def get_response(self):
         return self.api.get()
 
+    def get_srresponse(self):
+        return self.api.parse()
+
     def set_start_record(self, startRecord):
         self.api.startRecord = startRecord
 
