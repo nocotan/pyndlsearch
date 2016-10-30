@@ -59,5 +59,11 @@ class OpenSearchApi(AbstractAPI):
         """
         self.mediatype = ''
 
-    def get():
+    def make_query(self):
+        pass
+
+    def get(self):
+        pass
+
+    def parse(self):
         pass
