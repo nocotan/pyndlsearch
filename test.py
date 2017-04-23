@@ -11,7 +11,7 @@ if __name__ == '__main__':
     print(cql.payload())
 
     client = SRUClient(cql)
-    client.set_maximum_records(2)
+    client.set_maximum_records(10)
     print(client)
     #res = client.get_response()
     #print(res.text)
@@ -20,5 +20,6 @@ if __name__ == '__main__':
     srres = client.get_srresponse()
 
     for record in srres.records:
-        print(record.recordData.title)
-        print(record.recordData.creator)
+        print("title:", record.recordData.title)
+        print("creator:", record.recordData.creator)
+        print("description:", record.recordData.description)
