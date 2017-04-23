@@ -27,13 +27,16 @@ for dirpath, dirnames, filenames in os.walk(package_dir):
         packages.append(".".join(fullsplit(dirpath)))
 
 setup(
-    name = 'pyndlsearch',
-    version = '1.0',
-    description = 'A Python Wrapper for NDL Search API.',
-    keywords = 'api, ndl, search, wrapper',
-    license = 'MIT License',
-    author = 'nocotan',
-    author_email = 'noconoco.lib@gmail.com',
-    url = 'http://github.com/nocotan/pyndlsearch/',
-    packages = packages,
+    name='pyndlsearch',
+    version='1.0',
+    description='A Python Wrapper for NDL Search API.',
+    keywords='api, ndl, search, wrapper',
+    license='MIT License',
+    author='nocotan',
+    author_email='noconoco.lib@gmail.com',
+    url='http://github.com/nocotan/pyndlsearch/',
+    packages=packages,
+    install_requires=[
+        'requests>=2.10.0'
+    ],
 )

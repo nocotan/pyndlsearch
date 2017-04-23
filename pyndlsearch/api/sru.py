@@ -8,18 +8,18 @@ from .abs_api import AbstractAPI
 
 
 class RecordData(object):
-    title = ''
-    creator = ''
-    descriptions = {}
-    publisher = ''
-    language = ''
+    title = None
+    creator = None
+    description = None
+    publisher = None
+    language = None
 
     def __init__(self):
         pass
 
 class Record(object):
-    recordSchema = ''
-    recordPacking = ''
+    recordSchema = None
+    recordPacking = None
     recordData = None
     recordPosition = 0
 
@@ -35,9 +35,9 @@ class extraResponseData(object):
 
 
 class searchRetrieveResponse(object):
-    version = ''
+    version = None
     numberOfRecords = 0
-    nextRecordPosition = ''
+    nextRecordPosition = None
     extraResponseData = None
     records = []
 
@@ -159,11 +159,11 @@ class SRUApi(AbstractAPI):
             record_data_root = ElementTree.fromstring(record.find('{http://www.loc.gov/zing/srw/}recordData').text)
 
             title = record_data_root.find('{http://purl.org/dc/elements/1.1/}title')
-            if title is not None:
+            if title is not None and title.text:
                 tmp_record_data.title = title.text
 
             creator = record_data_root.find('{http://purl.org/dc/elements/1.1/}creator')
-            if creator is not None:
+            if creator is not None and creator.text:
                 tmp_record_data.creator = creator.text
 
             publisher = record_data_root.find('{http://purl.org/dc/elements/1.1/}publisher')
@@ -171,16 +171,16 @@ class SRUApi(AbstractAPI):
                 tmp_record_data.publisher = publisher.text
 
             language = record_data_root.find('{http://purl.org/dc/elements/1.1/}language')
-            if language is not None:
+            if language is not None and language.text:
                 tmp_record_data.language = language.text
 
             subject = record_data_root.find('{http://purl.org/dc/elements/1.1/}subject')
-            if subject is not None:
+            if subject is not None and subject.text:
                 tmp_record_data.subject = subject.text
 
-            descriptions = record_data_root.find('{http://purl.org/dc/elements/1.1/}description')
-            if descriptions is not None:
-                tmp_record_data.descriptions = descriptions
+            description = record_data_root.find('{http://purl.org/dc/elements/1.1/}description')
+            if description is not None and description.text:
+                tmp_record_data.description = description.text
 
             tmp_record.recordData = tmp_record_data
             records.append(tmp_record)
