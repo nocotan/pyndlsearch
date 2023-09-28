@@ -16,6 +16,8 @@ class CQL(object):
 
     """ 作成者. """
     creator = ''
+    creator_exact = False
+    creator_first = False
 
     """ 出版社. """
     publisher = ''
@@ -99,10 +101,21 @@ class CQL(object):
                 self.query += ' AND title="{}"'.format(self.title)
 
         if not self.is_empty(self.creator):
-            if self.is_empty_query():
-                self.query += 'creator%3d"{}"'.format(self.creator)
+            if self.creator_exact == True:
+                if self.is_empty_query():
+                    self.query += 'creator exact "{}"'.format(self.creator)
+                else:
+                    self.query += ' AND creator exact "{}"'.format(self.creator)
+            elif self.creator_first == True:
+                if self.is_empty_query():
+                    self.query += 'creator%3d"{}"^'.format(self.creator)
+                else:
+                    self.query += ' AND creator="{}"^'.format(self.creator)
             else:
-                self.query += ' AND creator="{}"'.format(self.creator)
+                if self.is_empty_query():
+                    self.query += 'creator%3d"{}"'.format(self.creator)
+                else:
+                    self.query += ' AND creator="{}"'.format(self.creator)
 
         if not self.is_empty(self.publisher):
             if self.is_empty_query():
